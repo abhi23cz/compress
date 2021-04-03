@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const multer = require('multer')
+const port = process.env.PORT || 80;
 
 app.use(express.static(__dirname + 'upload'))
 app.set('view engine', 'ejs');
@@ -63,6 +64,6 @@ app.post('/compress/:name/:quality', (req, res) => {
 
 
 
-app.listen(80, () => {
+app.listen(port, () => {
     console.log("Server Started")
 })
